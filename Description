@@ -1,0 +1,61 @@
+EMS Route Planner Project
+Project Overview
+The EMS Route Planner is an intelligent route optimization tool designed to aid emergency medical services (EMS) in identifying the fastest, most efficient routes to hospitals, taking into account real-time traffic, patient priority, and hospital capacity constraints. This project utilizes A* search and Constraint Satisfaction Problem (CSP) techniques to dynamically compute optimal paths for medical teams, aiming to reduce response times in critical situations. By integrating Google Maps for visual route planning, it provides EMS teams with actionable, real-world data for effective decision-making.
+
+Core Features
+Dynamic Traffic Updates:
+
+The system continuously monitors traffic conditions, updating traffic levels on specific roads as needed.
+This ensures that routes are recalculated to avoid congested areas, providing the fastest possible path under current conditions.
+Patient Priority-Based Routing:
+
+Patients are assigned priority levels (e.g., 1 for high, 3 for low) based on urgency.
+Higher-priority patients are routed first, allowing EMS to address the most critical cases without delay.
+Hospital Capacity Tracking:
+
+Each hospital has a specific capacity, which decreases when a patient is routed there.
+Once at full capacity, a hospital is temporarily removed from consideration, directing future patients to alternative facilities.
+Google Maps Integration for Real-Time Routing:
+
+The tool includes functionality to open Google Maps and display the best route to the nearest available hospital.
+This real-time mapping assists EMS drivers by providing turn-by-turn navigation from patient locations to hospitals.
+A Search Algorithm*:
+
+A* search is used to calculate optimal paths between nodes (locations) based on distance and traffic conditions.
+By applying a heuristic to estimate remaining distance, it efficiently identifies the shortest route to the goal.
+Constraint Satisfaction Problem (CSP) Handling:
+
+CSP concepts ensure that hospital capacities are respected, avoiding overloading any single hospital.
+It also ensures that traffic constraints are considered when finding routes, helping balance load across roads.
+Project Workflow
+Add Locations:
+
+Users can add various locations, including hospitals with specific capacities and regular locations that serve as route points.
+Define Roads with Traffic Levels:
+
+Roads between locations are defined with distances and traffic multipliers, simulating real-time traffic conditions.
+This data is used to adjust travel times dynamically.
+Patient Registration and Prioritization:
+
+Patients are added with unique IDs, locations, and urgency levels.
+The system then organizes the EMS dispatch process based on these priorities, ensuring critical patients are attended to first.
+Dynamic Route Planning:
+
+The A* algorithm calculates the best routes for each patient to the nearest available hospital.
+Traffic levels and hospital availability are factored in, updating paths if a better route becomes available.
+Real-Time Routing with Google Maps:
+
+For added convenience, the planner opens the optimized route in Google Maps, allowing EMS personnel to view and follow directions directly.
+Potential Use Cases
+Emergency Medical Services: Provides route optimization to hospitals for urgent patient transport.
+Disaster Management: Can assist in transporting multiple patients during large-scale emergencies by prioritizing based on severity.
+Urban Health Services: Valuable for routine EMS operations in urban settings where traffic conditions frequently change.
+Benefits
+Reduced Response Time: Shortens transport time to hospitals, improving survival rates for critical cases.
+Load Balancing Across Hospitals: Prevents overloading any single hospital, distributing patients based on capacity.
+Real-Time Traffic Adaptation: Adapts routes to avoid delays caused by real-time traffic congestion.
+Technologies Used
+Python: Main programming language for implementation.
+Heap Queue (heapq): Used for efficient priority queue management in A* search.
+Webbrowser Library: Integrates with Google Maps for route display.
+GitHub: Version control for code management and collaboration.
